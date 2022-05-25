@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
 html {
   height: 100%;
   width: 100%;
@@ -5,10 +10,21 @@ html {
 
 body {
   margin: 0;
-  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+select {
+  border-radius: 3px;
+  font-size: 1.2rem;
+  margin-block: 5px;
+  padding-block: 1px;
+  padding-inline: 10px;
+  width: fit-content;
+}
+
+select:focus {
+  border: 2px solid green;
 }
 
 .App {
@@ -20,7 +36,7 @@ body {
 .header {
   display: flex;
   gap: 10px;
-  height: 20%;
+  height: 10%;
   justify-content: center;
 
   width: 100%;
