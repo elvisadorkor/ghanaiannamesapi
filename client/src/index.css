@@ -10,3 +10,23 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.App {
+  background-color: azure;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  display: flex;
+  gap: 10px;
+  height: 20%;
+  justify-content: center;
+
+  width: 100%;
+}
+
+/* Flag image */
+.ghana-flag {
+  width: 50px;
+}
