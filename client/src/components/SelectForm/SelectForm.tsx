@@ -1,20 +1,17 @@
 // import { useEffect, useState } from "react";
 import "../../../src/index.css";
+import "./SelectForm.css";
 
-const tribes = [
-  { null: "-- Select a tribe --" },
-  { fante: "Fante" },
-  { ashanti: "Ashanti" },
-  { ga: "Ga-Adange" },
-  { ewe: "Ewe" },
-  { "mole-dagbon": "Mole-Dagbon" },
-  { guan: "Guan" },
-  { dagomba: "Dagomba" },
-];
+import { tribes } from "../../assets/data";
+import { MouseEventHandler } from "react";
 
-const Filters = () => {
+type Props = {
+  handleSubmit: MouseEventHandler<Element>;
+};
+
+const SelectForm = (props: Props) => {
   return (
-    <section>
+    <form>
       <div>
         <select name="tribes" id="tribe-select">
           {tribes.map((tribe, i) => {
@@ -35,8 +32,12 @@ const Filters = () => {
           <option value="female">Female</option>
         </select>
       </div>
-    </section>
+
+      <button className="search-button" onClick={props.handleSubmit}>
+        Search
+      </button>
+    </form>
   );
 };
 
-export default Filters;
+export default SelectForm;
