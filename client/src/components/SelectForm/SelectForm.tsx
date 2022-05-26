@@ -1,15 +1,10 @@
-// import { useEffect, useState } from "react";
 import "../../../src/index.css";
 import "./SelectForm.css";
 
+import { SelectFormProps } from "../../types";
 import { tribes } from "../../assets/data";
-import { MouseEventHandler } from "react";
 
-type Props = {
-  handleSubmit: MouseEventHandler<Element>;
-};
-
-const SelectForm = (props: Props) => {
+const SelectForm = (props: SelectFormProps) => {
   return (
     <form>
       <div>
