@@ -1,0 +1,18 @@
+{
+  "tribes": [
+    {
+      "id": 1,
+      "name": "Akan",
+      "region": "Western",
+      "maleNames": { "Sunday": ["Kwesi", "Kwodwo"] },
+      "femaleNames": { "Sunday": ["Esi", "Maame Esi"] }
+    },
+    {
+      "id": 2,
+      "name": "Ewe",
+      "region": "Volta",
+      "maleNames": { "Sunday": ["Kosi", "Kudjoe"] },
+      "femaleNames": { "Sunday": ["Esinam", "Esse"] }
+    }
+  ]
+}

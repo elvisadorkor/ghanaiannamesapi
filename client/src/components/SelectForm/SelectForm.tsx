@@ -8,7 +8,7 @@ const SelectForm = (props: SelectFormProps) => {
   return (
     <form>
       <div>
-        <select name="tribes" id="tribe-select">
+        <select name="tribes" id="tribe-select" required>
           {tribes.map((tribe, i) => {
             return (
               <option id="tribe-option" key={i} value={Object.keys(tribe)}>

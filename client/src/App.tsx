@@ -1,4 +1,5 @@
 import { MouseEvent, useState } from "react";
+// import axios from "axios";
 import "./index.css";
 import WelcomeGreetings from "./components/WelcomeGreetings/WelcomeGreetings";
 import ghanaFlag from "../public/flag_of_ghana.svg";

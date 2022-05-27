@@ -6,7 +6,7 @@ const welcomeInLanguages = [
 ];
 
 const tribes = [
-  { null: "-- Select a tribe --" },
+  { null: "-- Select a tribe -- *" },
   { akan: "Akan" },
   { ga: "Ga-Adange" },
   { ewe: "Ewe" },
