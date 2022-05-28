@@ -1,43 +1,35 @@
-using ghanaiannamesapi.Models;
+using System.Collections.Generic;
+using ghanaiannamesapi.server.Models;
 
-namespace ghanaiannamesapi.Services;
+namespace ghanaiannamesapi.server.Services;
 
 public static class GhanaianNamesService
 {
-    static List<Tribe> Tribes {get; }
-    static int nextId = 4;
-    static GhanaianNamesService()
+    static List<TribeName> Tribes { get; }
+    static int nextId = 2;
+    static GhanaianNamesService() => GhanaianNames = new List<TribeName>
         {
-            Tribes = new List<Tribe>
-            {
-            new Tribe {
-                            id = 1,
-                            Name = "Akan",
-                            Region = "Ashanti, Western, Central, Eastern and Brong Ahafo Regions",
-                            MaleDayNames = new Dictionary<string, List<string>>
-                                {
-                                    {"Sunday", new List<string> { "Kwesi" }},
-                                    {"Monday", new List<string> { "Kwadwo" }},
-                                    {"Tuesday", new List<string> { "Kwabena", "Ebo" }},
-                                    {"Wednesday", new List<string> { "Kwaku", "Yooku"} },
-                                    {"Thursday", new List<string> { "Yaw" }},
-                                    {"Friday", new List<string> { "Kofi" }},
-                                    {"Saturday", new List<string> { "Kwame" }}
-                                },
-                            FemaleDayNames = new Dictionary<string, List<string>>
-                                {
-                                    {"Sunday", new List<string> { "Akosua", "Esi" }},
-                                    {"Monday", new List<string> { "Adwoa" }},
-                                    {"Tuesday", new List<string> { "Abena" }},
-                                    {"Wednesday", new List<string> { "Akua"} },
-                                    {"Thursday", new List<string> { "Yaa" }},
-                                    {"Friday", new List<string> { "Efua" }},
-                                    {"Saturday", new List<string> { "Amba", "Ama" }}
-                                }
-                            
-                    }
-        };
-
+        new Tribe
+        {
+            Id = 1,
+            Name = "Akan",
+            Region = "Ashanti, Western, Central, Eastern, and Brong Ahafo Regions",
+            Male ={{ "Sunday", "Kwesi" },{ "Monday", "Kwadwo" },{ "Tuesday", "Kwabena, Ebo" },{ "Wednesday", "Kwaku, Yooku" },{ "Thursday", "Yaw" },{ "Friday", "Kofi" },{ "Saturday", "Kwame" }},
+            Female =
+            {{"Sunday","Akosua, Esi"},{"Monday","Adwoa"},{"Tuesday","Abena"},{"Wednesday","Akua"},{"Thursday","Yaa"},{"Friday","Efua"},{"Saturday","Amba, Ama"}
+            }
         }
+    };
 
+    //Get all male and female names for a given tribe
+    public static List<TribeName> GetAllTribeNames(string tribeName) =>
+        GhanaianNames.FirstOrDefault(n => n.Name == tribeName);
+
+    //Get gender-specific names for a trine
+    public static List<Dictionary<string, string>> GetGenderSpecificNames(string tribeName, string gender)
+    {
+        var tribe = GhanaianNames.FirstOrDefault(t => t.Name == tribeName);
+        var gender = tribe.gender;
+    }
 }
+
