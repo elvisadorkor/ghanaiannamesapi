@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace ghanaiannamesapi.server.Controllers;
 
 [ApiController]
-[Route("/api/[controller]")]
+[Route("/api/tribenames")]
 public class GhanaianNamesController : ControllerBase
 {
     public GhanaianNamesController() { }
