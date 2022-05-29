@@ -5,18 +5,18 @@ using Microsoft.AspNetCore.Mvc;
 namespace ghanaiannamesapi.server.Controllers;
 
 [ApiController]
-[Route("/api/tribenames")]
+[Route(template: "/api/tribenames")]
 public class GhanaianNamesController : ControllerBase
 {
     public GhanaianNamesController() { }
 
-    [HttpGet]
+    [HttpGet] //Get all tribes
     public ActionResult<List<Tribe>> GetAll()
     {
         return Ok(value: GhanaianNamesService.GetAll());
     }
 
-    [HttpGet]
+    [HttpGet] //Get one tribe using id param
     [Route(template: "{id}")]
     public ActionResult<Tribe> GetOneTribe(int id)
     {
