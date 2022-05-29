@@ -1,25 +1,30 @@
-using System.Collections.Generic;
 using ghanaiannamesapi.server.Models;
 using ghanaiannamesapi.server.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ghanaiannamesapi.Controllers;
+namespace ghanaiannamesapi.server.Controllers;
 
 [ApiController]
-[Route("/api/[tribenames]")]
+[Route("/api/[controller]")]
 public class GhanaianNamesController : ControllerBase
 {
     public GhanaianNamesController() { }
 
     [HttpGet]
-    public ActionResult<List<Tribe>> Get()
+    public ActionResult<List<Tribe>> GetAll()
     {
-        return GhanaianNamesService.GetAllTribeNames();
+        return Ok(value: GhanaianNamesService.GetAll());
     }
 
-    [HttpGet("{id}")]
-    public ActionResult<List<Dictionary<string, string>>> Get()
+    [HttpGet]
+    [Route(template: "{id}")]
+    public ActionResult<Tribe> GetOneTribe(int id)
     {
-        return GetGenderSpecificNames();
+        Tribe selectedTribe = GhanaianNamesService.GetOneTribe(id: id);
+        if (selectedTribe == null)
+        {
+            return NotFound();
+        }
+        return Ok(value: selectedTribe);
     }
 }

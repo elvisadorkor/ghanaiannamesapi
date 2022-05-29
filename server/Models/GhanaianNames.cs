@@ -1,11 +1,10 @@
 namespace ghanaiannamesapi.server.Models;
 
-public class TribeName
+public class Tribe
 {
     public int Id { get; set; }
-    public string Name { get; }
-    public string Region { get; }
-
-    public List<Dictionary<string, string>> Male { get; set; }
-    public List<Dictionary<string, string>> Female { get; set; }
+    public string Name { get; set; }
+    public string Region { get; set; }
+    public Dictionary<string, List<string>> MaleNames { get; set; }
+    public Dictionary<string, List<string>> FemaleNames { get; set; }
 }
