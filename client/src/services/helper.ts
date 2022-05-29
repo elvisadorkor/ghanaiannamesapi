@@ -1,4 +1,7 @@
 import axios from "axios";
+import { Tribe } from "../types";
+
+const url = "/api/tribenames";
 
 //Set random numbers for the wlecome greetings array
 function setRandomIndex(max: number, index: number) {
@@ -9,9 +12,15 @@ function setRandomIndex(max: number, index: number) {
   return randomIndex;
 }
 
-/*Fetch names from server based on user selection of tribe and gender*/
-async function fetchNames(tribe: string, gender: string) {
-  const url = "/api/names";
+/*Fetch names from server based on user selection of tribe*/
+async function fetchAllTribeNames() {
+  const response = await axios.get(url);
+  const data = (await response.data) as Tribe[];
+  return data;
+}
+
+/*Fetch names from server based on user selection of tribe*/
+async function fetchSpecificGenderNames(tribe: string, gender: string) {
   const response = await axios.get(url, {
     params: { tribe, gender },
     headers: { "Content-Type": "application/json" },
@@ -19,4 +28,4 @@ async function fetchNames(tribe: string, gender: string) {
   return response.data;
 }
 
-export { setRandomIndex, fetchNames };
+export { setRandomIndex, fetchAllTribeNames, fetchSpecificGenderNames };

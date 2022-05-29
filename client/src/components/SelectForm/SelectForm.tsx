@@ -1,6 +1,7 @@
+import { FaFilter } from "react-icons/fa";
+
 import "../../../src/index.css";
 import "./SelectForm.css";
-
 import { SelectFormProps } from "../../types";
 import { tribes } from "../../assets/data";
 
@@ -22,14 +23,16 @@ const SelectForm = (props: SelectFormProps) => {
 
       <div>
         <select name="genders" id="gender-select">
-          <option value="">-- Select gender --</option>
+          <option value="">--Select gender--</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </select>
       </div>
 
       <button className="search-button" onClick={props.handleSubmit}>
-        Search
+        <div className="button-div">
+          Filter <FaFilter style={{ width: "14px" }} />
+        </div>
       </button>
     </form>
   );

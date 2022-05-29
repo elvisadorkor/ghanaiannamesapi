@@ -28,7 +28,6 @@ select:focus {
 }
 
 .App {
-  background-color: azure;
   text-align: center;
 }
 
@@ -39,6 +38,7 @@ select:focus {
   height: 10%;
   justify-content: center;
 
+  padding-top: 7vh;
   width: 100%;
 }
 

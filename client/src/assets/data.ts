@@ -6,7 +6,7 @@ const welcomeInLanguages = [
 ];
 
 const tribes = [
-  { null: "-- Select a tribe -- *" },
+  { null: "--Select a tribe-- " },
   { akan: "Akan" },
   { ga: "Ga-Adange" },
   { ewe: "Ewe" },
@@ -14,4 +14,14 @@ const tribes = [
   { dagomba: "Dagomba" },
 ];
 
-export { welcomeInLanguages, tribes };
+const daysOfTheWeek = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+
+export { welcomeInLanguages, tribes, daysOfTheWeek };

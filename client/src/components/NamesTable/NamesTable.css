@@ -1,0 +1,21 @@
+th {
+  background-color: #444;
+  color: #fff;
+  width: calc(10% + 2px);
+}
+
+table {
+  font-size: 0.9rem;
+  margin: 50px auto;
+  width: 80%;
+}
+
+.larger,
+th {
+  font-size: 1.1rem;
+}
+
+.tribes-section {
+  /* margin: 50px auto; */
+  width: 100%;
+}

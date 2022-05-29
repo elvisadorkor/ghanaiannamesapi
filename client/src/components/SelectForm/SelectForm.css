@@ -13,3 +13,8 @@
   background-color: darkgreen;
   cursor: pointer;
 }
+
+.button-div {
+  display: flex;
+  align-items: center;
+}

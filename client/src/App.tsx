@@ -1,13 +1,31 @@
-import { MouseEvent, useState } from "react";
-// import axios from "axios";
+import { MouseEvent, useEffect, useState } from "react";
+import axios from "axios";
+
 import "./index.css";
 import WelcomeGreetings from "./components/WelcomeGreetings/WelcomeGreetings";
-import ghanaFlag from "../public/flag_of_ghana.svg";
+import ghanaFlag from "./assets/flag_of_ghana.svg";
 import SelectForm from "./components/SelectForm/SelectForm";
+import NamesTable from "./components/NamesTable/NamesTable";
 
 function App() {
   const [index, setIndex] = useState<number>(0),
-    [greeting, setGreeting] = useState<string>("Welcome!");
+    [greeting, setGreeting] = useState<string>("Welcome!"),
+    [tribeNames, setTribeNames] = useState([]);
+
+  async function fetchAllTribeNames() {
+    try {
+      const response = await axios.get("https://localhost:7112/api/tribenames");
+      const data = await response.data;
+      // console.log(data);
+      setTribeNames(data);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    fetchAllTribeNames();
+  }, []);
 
   function handleSubmit(e: MouseEvent<HTMLButtonElement>): void {
     e.preventDefault();
@@ -18,7 +36,7 @@ function App() {
     <div className="App">
       <header className="header">
         <img src={ghanaFlag} alt="Ghanaian flag" className="ghana-flag" />
-        <h1>Ghanaian Day Names</h1>
+        <h1>Ghanaian Tribe Day Names</h1>
       </header>
       <WelcomeGreetings
         index={index}
@@ -27,6 +45,7 @@ function App() {
         setGreeting={setGreeting}
       />
       <SelectForm handleSubmit={handleSubmit} />
+      <NamesTable tribes={tribeNames} />
     </div>
   );
 }
