@@ -16,10 +16,10 @@ const NamesTable = ({ tribes }: { tribes: Tribe[] }) => {
           </tr>
         </thead>
         <tbody>
-          {tribes.map((t) => (
+          {tribes.map((t, i) => (
             <>
               {/* Male row */}
-              <tr key={t.id}>
+              <tr>
                 <td className="larger">
                   <strong>{t.name}</strong>
                 </td>

@@ -1,8 +1,4 @@
-import { MouseEventHandler } from "react";
-
-export interface SelectFormProps {
-  handleSubmit: MouseEventHandler<Element>;
-}
+// import { MouseEventHandler } from "react";
 
 export interface WelcomeGreetingsProps {
   index: number;
@@ -10,11 +6,6 @@ export interface WelcomeGreetingsProps {
   greeting: string;
   setGreeting: (greeting: string) => void;
 }
-
-// type Name = {
-//   day: string;
-//   names: string[];
-// };
 
 export type Tribe = {
   id: number;

@@ -7,11 +7,15 @@ const welcomeInLanguages = [
 
 const tribes = [
   { null: "--Select a tribe-- " },
-  { akan: "Akan" },
-  { ga: "Ga-Adange" },
-  { ewe: "Ewe" },
-  { guan: "Guan" },
-  { dagomba: "Dagomba" },
+  { Akan: "Akan" },
+  { Ga: "Ga-Adange" },
+  { Ewe: "Ewe" },
+];
+
+const genders = [
+  { null: "--Select a gender-- " },
+  { Male: "Male" },
+  { Female: "Female" },
 ];
 
 const daysOfTheWeek = [
@@ -24,4 +28,4 @@ const daysOfTheWeek = [
   "Saturday",
 ];
 
-export { welcomeInLanguages, tribes, daysOfTheWeek };
+export { welcomeInLanguages, tribes, daysOfTheWeek, genders };

@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 import "./index.css";
@@ -10,7 +10,8 @@ import NamesTable from "./components/NamesTable/NamesTable";
 function App() {
   const [index, setIndex] = useState<number>(0),
     [greeting, setGreeting] = useState<string>("Welcome!"),
-    [tribeNames, setTribeNames] = useState([]);
+    [tribeNames, setTribeNames] = useState([]),
+    [params, setParams] = useState({ tribe: "", gender: "" });
 
   async function fetchAllTribeNames() {
     try {
@@ -27,10 +28,22 @@ function App() {
     fetchAllTribeNames();
   }, []);
 
-  function handleSubmit(e: MouseEvent<HTMLButtonElement>): void {
-    e.preventDefault();
-    console.log(`${e.type}`);
-  }
+  // function handleSubmit(e: any): void {
+  //   e.preventDefault();
+  //   let tribe = "",
+  //     gender = "";
+  //   const selectedTribe = e.target.tribe.value as string,
+  //     selectedGender = e.target.gender.value as string;
+  //   if (selectedTribe !== "null") {
+  //     tribe = selectedTribe;
+  //   }
+  //   if (selectedGender !== "null") {
+  //     gender = selectedGender;
+  //   }
+  //   const userParams = { tribe, gender };
+  //   setParams(userParams);
+  //   console.log(params);
+  // }
 
   return (
     <div className="App">
@@ -44,7 +57,7 @@ function App() {
         greeting={greeting}
         setGreeting={setGreeting}
       />
-      <SelectForm handleSubmit={handleSubmit} />
+      <SelectForm params={params} setParams={setParams} />
       <NamesTable tribes={tribeNames} />
     </div>
   );

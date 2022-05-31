@@ -1,15 +1,38 @@
-import { FaFilter } from "react-icons/fa";
-
 import "../../../src/index.css";
 import "./SelectForm.css";
-import { SelectFormProps } from "../../types";
-import { tribes } from "../../assets/data";
+import { tribes, genders } from "../../assets/data";
+
+interface Params {
+  tribe: string;
+  gender: string;
+}
+
+interface SelectFormProps {
+  params: Params;
+  setParams: ({ tribe, gender }: { tribe: string; gender: string }) => void;
+}
 
 const SelectForm = (props: SelectFormProps) => {
+  function handleSubmit(e: any): void {
+    e.preventDefault();
+    let tribe = "",
+      gender = "";
+    const selectedTribe = e.target.tribe.value as string,
+      selectedGender = e.target.gender.value as string;
+    if (selectedTribe !== "null") {
+      tribe = selectedTribe;
+    }
+    if (selectedGender !== "null") {
+      gender = selectedGender;
+    }
+    const userParams = { tribe, gender };
+    props.setParams(userParams);
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div>
-        <select name="tribes" id="tribe-select" required>
+        <select name="tribe" id="tribe-select">
           {tribes.map((tribe, i) => {
             return (
               <option id="tribe-option" key={i} value={Object.keys(tribe)}>
@@ -22,17 +45,19 @@ const SelectForm = (props: SelectFormProps) => {
       </div>
 
       <div>
-        <select name="genders" id="gender-select">
-          <option value="">--Select gender--</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
+        <select name="gender" id="gender-select">
+          {genders.map((gender, i) => {
+            return (
+              <option id="tribe-option" key={i} value={Object.keys(gender)}>
+                {Object.values(gender)}
+              </option>
+            );
+          })}
         </select>
       </div>
 
-      <button className="search-button" onClick={props.handleSubmit}>
-        <div className="button-div">
-          Filter <FaFilter style={{ width: "14px" }} />
-        </div>
+      <button type="submit" className="search-button">
+        <div className="button-div">Filter</div>
       </button>
     </form>
   );
