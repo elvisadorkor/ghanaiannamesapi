@@ -169,4 +169,20 @@ public static class GhanaianNamesService
         Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Id == id);
         return selectedTribe;
     }
+
+    //Function to get one tribe and specific gender names 
+    public static List<string> GetTribeGenderNames(int id, string gender)
+    {
+        Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Id == id);
+        string selectedTribeLower = selectedTribe.ToLower();
+        if (selectedTribeLower == "male")
+        {
+            List<string> GenderNames = selectedTribe.MaleNames;
+        }
+        else if (selectedTribeLower == "female")
+        {
+            List<string> GenderNames = selectedTribe.FemaleNames;
+        }
+        return GenderNames;
+    }
 }
