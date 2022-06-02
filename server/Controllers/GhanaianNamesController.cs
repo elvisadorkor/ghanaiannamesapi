@@ -28,15 +28,15 @@ public class GhanaianNamesController : ControllerBase
         return Ok(value: selectedTribe);
     }
 
-    [HttpGet] //Get one tribe using id param and a specific gender
-    [Route(template: "{id}", "{gender}")]
-    public ActionResult<List<string>> GetTribeGenderNames(int id, string gender)
-    {
-        List<string> GenderNames = GhanaianNamesService.GetTribeGenderNames(id: id, gender: gender);
-        if (GenderNames == null)
-        {
-            return NotFound();
-        }
-        return Ok(value: GenderNames);
-    }
+    // [HttpGet] //Get one tribe using id param and a specific gender
+    // [Route(template: "{id}", "{gender}")]
+    // public ActionResult<List<string>> GetTribeGenderNames(int id, string gender)
+    // {
+    //     List<string> GenderNames = GhanaianNamesService.GetTribeGenderNames(id: id, gender: gender);
+    //     if (GenderNames == null)
+    //     {
+    //         return NotFound();
+    //     }
+    //     return Ok(value: GenderNames);
+    // }
 }

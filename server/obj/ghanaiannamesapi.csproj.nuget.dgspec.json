@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Selorm\\Desktop\\projects\\ghanaiannamesapi\\server\\ghanaiannamesapi.csproj": {}
+    "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Selorm\\Desktop\\projects\\ghanaiannamesapi\\server\\ghanaiannamesapi.csproj": {
+    "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Selorm\\Desktop\\projects\\ghanaiannamesapi\\server\\ghanaiannamesapi.csproj",
+        "projectUniqueName": "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj",
         "projectName": "ghanaiannamesapi",
-        "projectPath": "C:\\Users\\Selorm\\Desktop\\projects\\ghanaiannamesapi\\server\\ghanaiannamesapi.csproj",
-        "packagesPath": "C:\\Users\\Selorm\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Selorm\\Desktop\\projects\\ghanaiannamesapi\\server\\obj\\",
+        "projectPath": "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj",
+        "packagesPath": "/Users/jefferyadorkor/.nuget/packages/",
+        "outputPath": "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Selorm\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/jefferyadorkor/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.300/RuntimeIdentifierGraph.json"
         }
       }
     }

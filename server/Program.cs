@@ -1,3 +1,5 @@
+ServicePointManager.ServerCertificateValidationCallback = (sender, cert, chain, sslPolicyErrors) =>
+    true;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
