@@ -7,11 +7,12 @@ import ghanaFlag from "./assets/flag_of_ghana.svg";
 import SelectForm from "./components/SelectForm/SelectForm";
 import NamesTable from "./components/NamesTable/NamesTable";
 import { fetchSpecificGenderNames } from "./services/helper";
+import { Tribe } from "./types";
 
 function App() {
   const [index, setIndex] = useState<number>(0),
     [greeting, setGreeting] = useState<string>("Welcome!"),
-    [tribeNames, setTribeNames] = useState([]),
+    [tribeNames, setTribeNames] = useState<Tribe[]>([]),
     [tribe, setTribe] = useState(""),
     [gender, setGender] = useState("");
 
@@ -44,7 +45,7 @@ function App() {
       setGender(selectedGender);
     }
     const filteredNames = await fetchSpecificGenderNames(tribe, gender);
-    setTribeNames(filteredNames);
+    console.table(filteredNames);
   }
 
   return (

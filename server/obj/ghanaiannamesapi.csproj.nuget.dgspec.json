@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj": {}
+    "/Users/jefferyadorkor/Desktop/ghanaiannamesapi/server/ghanaiannamesapi.csproj": {}
   },
   "projects": {
-    "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj": {
+    "/Users/jefferyadorkor/Desktop/ghanaiannamesapi/server/ghanaiannamesapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj",
+        "projectUniqueName": "/Users/jefferyadorkor/Desktop/ghanaiannamesapi/server/ghanaiannamesapi.csproj",
         "projectName": "ghanaiannamesapi",
-        "projectPath": "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/ghanaiannamesapi.csproj",
+        "projectPath": "/Users/jefferyadorkor/Desktop/ghanaiannamesapi/server/ghanaiannamesapi.csproj",
         "packagesPath": "/Users/jefferyadorkor/.nuget/packages/",
-        "outputPath": "/Users/jefferyadorkor/MEGA/selorm/Programming/projects/ghanaiannamesapi/server/obj/",
+        "outputPath": "/Users/jefferyadorkor/Desktop/ghanaiannamesapi/server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jefferyadorkor/.nuget/NuGet/NuGet.Config"

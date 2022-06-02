@@ -161,28 +161,33 @@ public static class GhanaianNamesService
     }
 
     //Function to return all tribes. Later it should return names for a single tribe
-    public static List<Tribe> GetAll() => Tribes;
+    public static List<Tribe> GetAll()
+    {
+        Console.WriteLine("here");
+        return Tribes;
+    }
 
     //Function to get one tribe given an id
-    public static Tribe GetOneTribe(int id)
+    public static Tribe GetOneTribe(string tribe)
     {
-        Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Id == id);
+        Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Name == tribe);
         return selectedTribe;
     }
 
     //Function to get one tribe and specific gender names
-    // public static List<string> GetTribeGenderNames(int id, string gender)
-    // {
-    //     Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Id == id);
-    //     string selectedTribeLower = selectedTribe.ToLower();
-    //     if (selectedTribeLower == "male")
-    //     {
-    //         List<string> GenderNames = selectedTribe.MaleNames;
-    //     }
-    //     else if (selectedTribeLower == "female")
-    //     {
-    //         List<string> GenderNames = selectedTribe.FemaleNames;
-    //     }
-    //     return GenderNames;
-    // }
+    public static Dictionary<string, List<string>> GetTribeGenderNames(string tribe, string gender)
+    {
+        Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Name == tribe);
+
+        if (gender == "Male")
+        {
+            Dictionary<string, List<string>> GenderNames = selectedTribe.MaleNames;
+            return GenderNames;
+        }
+        else
+        {
+            Dictionary<string, List<string>> GenderNames = selectedTribe.FemaleNames;
+            return GenderNames;
+        }
+    }
 }
