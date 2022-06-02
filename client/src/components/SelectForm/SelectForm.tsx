@@ -2,35 +2,13 @@ import "../../../src/index.css";
 import "./SelectForm.css";
 import { tribes, genders } from "../../assets/data";
 
-interface Params {
-  tribe: string;
-  gender: string;
-}
-
 interface SelectFormProps {
-  params: Params;
-  setParams: ({ tribe, gender }: { tribe: string; gender: string }) => void;
+  handleSubmit: (e: any) => void;
 }
 
 const SelectForm = (props: SelectFormProps) => {
-  function handleSubmit(e: any): void {
-    e.preventDefault();
-    let tribe = "",
-      gender = "";
-    const selectedTribe = e.target.tribe.value as string,
-      selectedGender = e.target.gender.value as string;
-    if (selectedTribe !== "null") {
-      tribe = selectedTribe;
-    }
-    if (selectedGender !== "null") {
-      gender = selectedGender;
-    }
-    const userParams = { tribe, gender };
-    props.setParams(userParams);
-  }
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={props.handleSubmit}>
       <div>
         <select name="tribe" id="tribe-select">
           {tribes.map((tribe, i) => {
