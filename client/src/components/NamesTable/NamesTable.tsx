@@ -1,6 +1,7 @@
 import { Tribe } from "../../types";
 import { daysOfTheWeek } from "../../assets/data";
 import "./NamesTable.css";
+import TribeRow from "../TribeRow/TribeRow";
 
 const NamesTable = ({ tribes }: { tribes: Tribe[] }) => {
   return (
@@ -10,44 +11,14 @@ const NamesTable = ({ tribes }: { tribes: Tribe[] }) => {
           <tr>
             <th>Tribes</th>
             <th>Gender</th>
-            {daysOfTheWeek.map((d) => (
-              <th>{d}</th>
+            {daysOfTheWeek.map((d, i) => (
+              <th key={i}>{d}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {tribes.map((t, i) => (
-            <>
-              {/* Male row */}
-              <tr>
-                <td className="larger">
-                  <strong>{t.name}</strong>
-                </td>
-                <td>Male</td>
-                {Object.values(t.maleNames).map((names) => (
-                  <td>
-                    {names.map((n: string) => (
-                      <div>{n}</div>
-                    ))}
-                  </td>
-                ))}
-              </tr>
-              <br />
-              {/* Female row */}
-              <tr key={t.id}>
-                <td></td>
-                <td>Female</td>
-                {Object.values(t.femaleNames).map((names) => (
-                  <td>
-                    {names.map((n: string) => (
-                      <div>{n}</div>
-                    ))}
-                  </td>
-                ))}
-              </tr>
-              <br />
-              <br />
-            </>
+          {tribes.map((t) => (
+            <TribeRow tribe={t} key={t.id} />
           ))}
         </tbody>
       </table>

@@ -1,13 +1,13 @@
 th {
   background-color: #444;
   color: #fff;
-  width: calc(10% + 2px);
+  width: 100px;
 }
 
 table {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin: 50px auto;
-  width: 80%;
+  /* width: 80%; */
 }
 
 .larger,
@@ -16,6 +16,6 @@ th {
 }
 
 .tribes-section {
-  /* margin: 50px auto; */
+  margin: 50px auto;
   width: 100%;
 }
