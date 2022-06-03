@@ -1,13 +1,7 @@
 th {
   background-color: #444;
   color: #fff;
-  width: 100px;
-}
-
-table {
-  font-size: 1rem;
-  margin: 50px auto;
-  /* width: 80%; */
+  width: 120px;
 }
 
 .larger,
@@ -16,6 +10,21 @@ th {
 }
 
 .tribes-section {
-  margin: 50px auto;
+  margin: 50px auto 5vh;
   width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding-inline-start: 5px;
+  text-align: left;
+}
+
+table {
+  font-size: 1rem;
+  margin: 50px auto;
+  /* width: 80%; */
 }

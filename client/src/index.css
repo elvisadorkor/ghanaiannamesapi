@@ -29,6 +29,7 @@ select:focus {
 
 .App {
   text-align: center;
+  padding-bottom: 1em;
 }
 
 /* Header */
