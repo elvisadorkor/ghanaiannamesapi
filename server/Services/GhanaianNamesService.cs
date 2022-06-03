@@ -167,9 +167,9 @@ public static class GhanaianNamesService
     }
 
     //Function to get one tribe given an id
-    public static Tribe GetOneTribe(string tribe)
+    public static Tribe GetOneTribe(string id)
     {
-        Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Name == tribe);
+        Tribe selectedTribe = Tribes.FirstOrDefault(predicate: t => t.Id == int.Parse(s: id));
         return selectedTribe;
     }
 

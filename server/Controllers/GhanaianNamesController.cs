@@ -16,11 +16,10 @@ public class GhanaianNamesController : ControllerBase
         return Ok(value: GhanaianNamesService.GetAll());
     }
 
-    // [HttpGet] //Get one tribe using id param
-    // [Route(template: "{tribe}")]
-    // public ActionResult<Tribe> GetOneTribe(string tribe)
+    // [HttpGet(template: "{id}")] //Get one tribe using id param
+    // public ActionResult<Tribe> GetOneTribe(string id)
     // {
-    //     Tribe selectedTribe = GhanaianNamesService.GetOneTribe(tribe: tribe);
+    //     Tribe selectedTribe = GhanaianNamesService.GetOneTribe(id);
     //     if (selectedTribe == null)
     //     {
     //         return NotFound();
