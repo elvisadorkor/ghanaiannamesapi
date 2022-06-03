@@ -163,7 +163,6 @@ public static class GhanaianNamesService
     //Function to return all tribes. Later it should return names for a single tribe
     public static List<Tribe> GetAll()
     {
-        Console.WriteLine("here");
         return Tribes;
     }
 
